@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>株式会社南設備 | 消防設備工事一式</title>
+  <meta name="description" content="株式会社南設備は、消防設備を行う会社です。福岡市を拠点に、安全で快適な建物環境づくりに貢献します。">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0a4a82">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="株式会社南設備" />
+  <meta property="og:description" content="消防設備" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.co.jp/" />
+  <meta property="og:image" content="https://picsum.photos/1200/630" />
+
+  <style>
+    /* ====== Foundation (明るい基調・高コントラスト) ====== */
+    :root{
+      /* ▼ 画像URLはここを差し替え */
+      --hero-bg: url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop");
+      --partners-img: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1400&auto=format&fit=crop");
+
+      --bg:#f7fafc;            /* 背景はごく淡いグレー */
+      --surface:#ffffff;       /* カード/ヘッダー */
+      --text:#0b1320;          /* 本文 */
+      --muted:#4b5565;         /* 補助テキスト */
+      --line:#e6e8ef;          /* 枠線 */
+      --brand:#0a4a82;         /* 落ち着いたブルー（信頼感） */
+      --brand-weak:#4f83b4;
+      --accent:#1e88e5;
+      --focus:#7fb4ff55;       /* フォーカスリング */
+      --radius:14px;
+      --shadow:0 6px 24px rgba(16,24,40,.08);
+      --shadow-soft:0 2px 10px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic", Meiryo, sans-serif; line-height:1.7;}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    a:focus, button:focus, input:focus, textarea:focus{outline:3px solid var(--focus); outline-offset:2px}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+    /* ====== Header / Navigation ====== */
+    header{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.02em}
+    .logo-badge{width:26px;height:26px;border-radius:6px;background:var(--brand);box-shadow:var(--shadow-soft)}
+    .nav ul{display:flex;gap:22px;align-items:center;list-style:none;margin:0;padding:0}
+    .nav a{color:var(--text);font-weight:600}
+    .nav .cta{padding:10px 14px;border:1px solid var(--brand);border-radius:10px;background:#f5f9ff}
+    .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:24px}
+    @media (max-width: 860px){
+      .nav ul{display:none;position:absolute;left:0;top:68px;width:100%;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;padding:16px 0}
+      .nav ul.open{display:flex}
+      .menu-btn{display:inline-grid;place-items:center}
+    }
+
+    /* ====== Hero（背景画像＋オーバーレイ） ====== */
+    .hero{
+      position:relative; isolation:isolate;
+      padding:72px 0 56px;
+      border-bottom:1px solid var(--line);
+      color:#0b1320;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0; z-index:-2;
+      background:
+        linear-gradient(0deg, rgba(255,255,255,.90), rgba(255,255,255,.90)),
+        var(--hero-bg) center/cover no-repeat;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background: radial-gradient(800px 280px at 30% -10%, rgba(10,74,130,.10), transparent 70%);
+    }
+
+    .grid{display:grid;gap:24px}
+    .hero h1{font-size:clamp(28px,4vw,40px);line-height:1.25;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .badge{border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--brand);background:#f5f9ff}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+    .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center;box-shadow:var(--shadow-soft)}
+    .stat .num{font-size:20px;font-weight:800;color:var(--brand)}
+    /* 右側画像のスタイル（枠線・影） */
+    .hero-media{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+    @media (min-width: 860px){
+      .hero .grid{grid-template-columns:1.2fr .8fr;align-items:center}
+    }
+    @media (max-width: 720px){.stats{grid-template-columns:1fr}}
+
+    /* ====== Sections ====== */
+    section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}
+    .section-title{font-size:22px;margin:0 0 18px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-soft)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    @media (max-width: 860px){.cards{grid-template-columns:1fr 1fr}}
+    @media (max-width: 560px){.cards{grid-template-columns:1fr}}
+
+    .list{display:grid;gap:10px}
+    .item{display:flex;gap:12px;align-items:baseline;border-left:3px solid var(--brand);padding-left:12px;background:var(--surface);border:1px solid var(--line);border-left:none;border-radius:8px;box-shadow:var(--shadow-soft)}
+    .item strong{display:block;padding:12px}
+
+    /* ====== Partners（右に画像） ====== */
+    #partners .wrap{display:grid; gap:18px}
+    #partners .visual{
+      min-height:260px; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow-soft);
+      background:
+        linear-gradient(0deg, rgba(255,255,255,.12), rgba(255,255,255,.12)),
+        var(--partners-img) center/cover no-repeat;
+    }
+    @media (min-width: 960px){
+      #partners .wrap{grid-template-columns:1.1fr .9fr; align-items:start}
+    }
+
+    /* ====== Contact ====== */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .info-row{display:grid;grid-template-columns:140px 1fr;gap:12px;margin-bottom:10px}
+    .info-row .k{color:var(--muted)}
+    .map{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:#eef4fb}
+    form{display:grid;gap:12px}
+    label{font-weight:600}
+    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#fbfdff;color:var(--text)}
+    input::placeholder, textarea::placeholder{color:#9aa4b2}
+    button{padding:12px 16px;border-radius:10px;border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer;font-weight:700}
+    button:hover{filter:brightness(0.98)}
+    @media (max-width: 920px){.contact{grid-template-columns:1fr}}
+
+    /* Google Map のレスポンシブ対応（幅は100%、高さは比率で確保） */
+    .map-embed{position:relative; width:100%; aspect-ratio: 4/3; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .map-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+    /* ====== Footer ====== */
+    footer{padding:28px 0;color:#667085;background:var(--surface)}
+    .foot{display:flex;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
+    .foot small{color:#7a8699}
+
+    /* ====== Utilities ====== */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo" aria-label="株式会社南設備 ホーム">
+        <div class="logo-badge" aria-hidden="true"></div>
+        <span>株式会社 南設備</span>
+      </div>
+      <button class="menu-btn" aria-label="メニューを開く/閉じる" id="menuBtn" aria-controls="navLinks" aria-expanded="false">☰</button>
+      <ul id="navLinks" aria-label="サイト内メニュー">
+        <li><a href="#about">社長メッセージ</a></li>
+        <li><a href="#partners">主要取引先</a></li>
+        <li><a href="#contact" class="cta">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero（背景画像＋右に画像） -->
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <h1>消防設備で建物の<span style="color:var(--brand)">安全と安心</span>を支える。</h1>
+          <p>&nbsp;</p>
+          <div class="stats" aria-label="当社の特長">
+            <div class="stat"><div class="num">迅速対応</div><small>現場主義の柔軟な対応</small></div>
+            <div class="stat"><div class="num">法令遵守</div><small>安全基準に基づく施工管理</small></div>
+            <div class="stat"><div class="num">感恩報謝</div><small>顧客・社員への感謝と貢献</small></div>
+          </div>
+        </div>
+         <div class="hero-media">
+          <img src="HP-you-tennken.jpg" alt="設備点検作業の様子">
+         </div>
+
+      </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">社長メッセージ</h2>
+        <div class="card" role="region" aria-label="企業理念本文">
+          　<p style="margin:0 0 10px;">平素は格別のご高配を賜り、厚く御礼申し上げます。</p>
+          <p style="margin:0 0 10px;">平成18年から個人事業主として事業を開始し、今年で19年、様々なご協力のもと、消防設備設置を通して地域の安心と安全を支えてまいりました。「思いついたらまず行動！」の行動指針を掲げ、社員一同日々業務に励んでおります。これからも感謝の心を忘れず、より一層事業に邁進していく所存でございます。</p>
+          <p style="margin:0 0 10px;">今後ともよろしくお願い申し上げます。</p>
+          　　　　　　<p style="margin:0;color:var(--muted)">株式会社南設備　代表取締役 原洋介</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners（右側に画像を配置） -->
+    <section id="partners">
+      <div class="container">
+        <h2 class="section-title">主要取引先</h2>
+        <div class="wrap">
+          <div class="list" aria-label="主要仕入先一覧">
+            <div class="item"><strong>九州ノーミ株式会社</strong></div>
+            <div class="item"><strong>株式会社初田製作所</strong></div>
+            <div class="item"><strong>石原工業株式会社</strong></div>
+            <div class="item"><strong>森永防災システム株式会社</strong></div>
+            <div class="item"><strong>株式会社佐電工</strong></div>
+            <div class="item"><strong>株式会社クリマテック</strong></div>
+            <div class="item"><strong>株式会社アジアプラン</strong></div>
+            <div class="item"><strong>株式会社フクオカ設備</strong></div>
+            <div class="item"><strong>株式会社福進設備</strong></div>
+          </div>
+           <img src="HP-you-tennjousetti.jpg" alt="天井内での配線・設備施工の様子">
+		  </div>	
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="contact">
+          <div class="box" aria-labelledby="contact-info">
+            <h3 id="contact-info" style="margin-top:0;">会社情報</h3>
+            <div class="info-row">
+              <div class="k">会社名</div><div>株式会社南設備</div>
+            </div>
+            <div class="info-row">
+              <div class="k">代表取締役</div><div>原洋介</div>
+            </div>
+            <div class="info-row">
+              <div class="k">事務所所在地</div><div>〒811-2221 粕屋郡須恵町旅石891-4 須恵倉庫B棟</div>
+            </div>
+            <div class="info-row">
+              <div class="k">TEL</div>
+              <!-- 表示内容はそのまま、リンクは実発信可能形式へ -->
+              <div><a href="tel:0925666552" aria-label="電話番号 092-566-6552">092-566-6552</a></div>
+            </div>
+            <div class="info-row">
+              <div class="k">(対応時間)</div>
+              <div>(平日10:00~17:00)</div>
+            </div>
+            <div class="info-row">
+              <div class="k">メール</div>
+              <div><a href="mailto:minamisetsubi-hara@pc.so-net.jp">minamisetsubi-hara@pc.so-net.jp</a></div>
+            </div>
+            <div class="info-row">
+              <div class="k">事務所設立</div><div>平成19年(2007年)4月27日</div>
+            </div>
+            <div class="info-row">
+              <div class="k">法人設立</div><div>令和６年(2024年)4月23日</div>
+            </div>
+            <div class="info-row">
+              <div class="k">建設業許可</div><div>福岡県知事許可（般一２４）第１０７０１３号</div>
+            </div>
+
+            <!-- Google Map responsive -->
+            <div class="map-embed" aria-label="会社所在地（Googleマップ）">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6618844924274!2d130.5007294!3d33.5881271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541853b1d6444f9%3A0xb6ac4737c6614ac1!2z44CSODExLTIyMjEg56aP5bKh55yM57Of5bGL6YOh6aCI5oOg55S65peF55-z77yY77yZ77yR4oiS77yUIELmo58!5e0!3m2!1sja!2sjp!4v1762354292943!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="box" aria-labelledby="contact-form">
+            <h3 id="contact-form" style="margin-top:0;">お問い合わせフォーム</h3>
+            <form action="https://formspree.io/f/xvgvezao" method="POST">
+  <!-- 件名（メールのタイトルに使われる） -->
+  <input type="hidden" name="_subject" value="【南設備】ホームページからのお問い合わせ">
+
+  <label for="name">お名前</label>
+  <input id="name" type="text" name="お名前" placeholder="山田 太郎" required>
+
+  <label for="email">メールアドレス</label>
+  <input id="email" type="email" name="email" placeholder="example@example.com" required>
+
+  <label for="tel">電話番号</label>
+  <input id="tel" type="tel" name="電話番号" placeholder="090-XXXX-XXXX" required>
+
+  <label for="message">お問い合わせ内容</label>
+  <textarea id="message" name="message" rows="5" placeholder="ご相談内容や希望日程などをご記入ください" required></textarea>
+
+  <!-- スパム防止（Formspree推奨） -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- 送信後のリダイレクト先（任意） -->
+  <input type="hidden" name="_redirect" value="https://example.co.jp/thanks.html">
+
+  <button type="submit">送信する</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div class="logo" style="opacity:.95">
+        <div class="logo-badge" aria-hidden="true"></div>
+        <span>株式会社 南設備</span>
+      </div>
+      <small>© <span id="year"></span> Minami Setsubi Co., Ltd. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // 年号
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // モバイルメニュー開閉 + ARIA同期
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('navLinks');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // アンカーのスムーススクロール（ヘッダー高さ考慮）
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(!el) return;
+        e.preventDefault();
+        const headerH = document.querySelector('header').offsetHeight || 68;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
+        window.scrollTo({top:y, behavior:'smooth'});
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <!-- 構造化データ（内容はそのまま、検索エンジン向け表現のみ追加） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"株式会社南設備",
+    "url":"https://example.co.jp/",
+    "address":{
+      "@type":"PostalAddress",
+      "postalCode":"811-1353",
+      "addressRegion":"福岡県",
+      "addressLocality":"福岡市南区柏原47-16"
+    },
+    "telephone":"+81-92-566-6552",
+    "email":"minamisetsubi-hara@pc.so-net.jp"
+  }
+  </script>
+</body>
+</html>
+
